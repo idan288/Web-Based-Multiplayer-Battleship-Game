@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>BattleShips</title>
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/site.css">
+    <link rel="stylesheet" type="text/css" href="CSS/gameCSS.css">
+
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/button.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/popup.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/progress.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/loader.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/modal.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/container.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/dimmer.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/image.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/header.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/reveal.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/label.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/menu.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/flag.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/form.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/message.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/table.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/input.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/accordion.css">
+    <link rel="stylesheet" type="text/css" href="lib/Semantic-UI-CSS-master/components/loader.css">
+
+
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script src="lib/Semantic-UI-CSS-master/components/sidebar.js"></script>
+    <script src="lib/Semantic-UI-CSS-master/components/accordion.js"></script>
+    <script src="lib/Semantic-UI-CSS-master/components/progress.js"></script>
+    <script src="lib/Semantic-UI-CSS-master/components/visibility.js"></script>
+    <script src="lib/Semantic-UI-CSS-master/components/form.js"></script>
+    <script src="lib/Semantic-UI-CSS-master/components/modal.js"></script>
+    <script src="lib/Semantic-UI-CSS-master/components/transition.js"></script>
+    <script src="lib/Semantic-UI-CSS-master/components/dimmer.js"></script>
+    <script src="lib/Semantic-UI-CSS-master/components/dropdown.js"></script>
+</head>
+
+<body>
+<div class="ui inverted horizontal icon menu fixed tes">
+    <a class="item">
+        <span class="text" style="font-family: 'Amatic SC', cursive; font-size: 30px;">BattleShips</span></a>
+    <a class="item" style="font-family: 'Tahoma'; font-size: 18px" id="leaveBtn" onclick="leaveGame()">Leave room</a>
+    <a class="item" style="font-family: 'Tahoma'; font-size: 18px" id="gameType"></a>
+</div>
+<div class="ui grid centered btnPanel">
+
+    <div class="four wide column">
+        <table class="ui very basic celled table single line" style="padding: 10px;">
+            <thead>
+            <tr>
+                <th colspan="2" class="center aligned"><h3>Players</h3></th>
+            </tr>
+            </thead>
+            <thead>
+            <tr class="center aligned">
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+            </thead>
+            <tbody id="playerLists">
+            </tbody>
+        </table>
+    </div>
+    <div class="two wide column" style="padding-top: 4%">
+        <div class="ui horizontal labeled basic floated icon menu">
+            <a class="item" onclick="showAddRoomModel();" id="mine">
+                <i id="1" class="bomb icon" draggable="true" ondragstart="drag(event)"></i>
+                <span id="mineAmount">Mines amount: 1</span>
+            </a>
+        </div>
+    </div>
+    <div class="ten wide column">
+        <table class="ui table very basic center aligned" id="roomTable" style="padding: 27px">
+            <thead>
+            <tr>
+                <th><h3>Elapsed time</h3><span id="hours">00</span>:<span id="minutes">00</span>:<span
+                        id="seconds">00</span></th>
+                <th><h3>Total turns</h3><span id="totalTurns"></span></th>
+                <th><h3>Hits</h3><span id="hits"></span></th>
+                <th><h3>Misses</h3><span id="miss"></span></th>
+                <th><h3>Average time of attack</h3><span id="avgAttack"></span></th>
+                <th><h3>Room name</h3><span id="roomName"></span></th>
+            </tr>
+            </thead>
+        </table>
+        <div class="ui info icon message"
+             style="width: 50%;font-size: 20px;" id="msg"><i class="ui icon"></i><b id="msgText"></b>
+        </div>
+    </div>
+    <div class="five wide column">
+        <table class="">
+            <thead>
+            <tr>
+                <th style="text-align: center" colspan="20">
+                    <h2>Ships board</h2>
+                    <h3></h3>
+                </th>
+            </tr>
+            </thead>
+            <tbody id="shipsBoard">
+            </tbody>
+        </table>
+    </div>
+    <div class="five wide column">
+        <table id="mytbl" class="">
+            <thead>
+            <tr>
+                <th style="text-align: center" colspan="20">
+                    <h2>Hits board</h2>
+                    <h3></h3>
+                </th>
+            </tr>
+            </thead>
+            <tbody id="hitsBoard"></tbody>
+        </table>
+    </div>
+    <div class="two wide column" style="padding-top: 4%;">
+        <table class="ui basic celled table single line">
+            <thead>
+            <tr>
+                <th style="text-align: center" colspan="2">
+                    <h3>My remaining ships</h3>
+                </th>
+            </tr>
+            </thead>
+            <thead>
+            <tr class="center aligned">
+                <th>Size</th>
+                <th>Type</th>
+            </tr>
+            </thead>
+            <tbody id="myShips"></tbody>
+        </table>
+    </div>
+    <div class="two wide column" style="padding-top: 4%">
+        <table class="ui basic celled table single line">
+            <thead>
+            <tr>
+                <th style="text-align: center" colspan="2">
+                    <h3>Opponent remaining ships</h3>
+                </th>
+            </tr>
+            </thead>
+            <thead>
+            <tr class="center aligned">
+                <th>Size</th>
+                <th>Type</th>
+            </tr>
+            </thead>
+            <tbody id="oppShips"></tbody>
+        </table>
+    </div>
+</div>
+
+<div class="ui modal createRoom">
+    <i class="close icon"></i>
+    <div class="ui header">
+        <h2>Create new room</h2>
+    </div>
+    <div class="description" style="width:50%; padding: 20px">
+        <div class="ui header"><h3>Please enter your game name</h3></div>
+        <form id="myForm" class="ui form createRoom">
+            <div class="two field">
+                <div class="field">
+                    <input id="gameName" name="name" placeholder="Name" type="text">
+                </div>
+                <div class="field">
+                    <input id="file" name="XMLFile" placeholder="File upload" type="file" accept=".xml"
+                           onclick="hideErrMsg()">
+                </div>
+            </div>
+            <div class="ui negative message" id="errMsg"></div>
+        </form>
+        <button class="ui positive inverted red right labeled large icon button" id="addbtn" onclick="addRoom();"
+                style="margin-top: 10px" type="submit">
+            <b>Add</b>
+            <i class="add circle icon"></i>
+        </button>
+    </div>
+    <div class="actions">
+        <div class="ui positive inverted green right labeled large icon button">
+            <b>Exit</b>
+            <i class="large hand peace icon"></i>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/game.js"></script>
+<script src="js/CookieUtil.js"></script>
+</html>
