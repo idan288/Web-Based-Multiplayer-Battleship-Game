@@ -28,19 +28,27 @@ Server side code was written in Java using Tomcat server.
  1. The game automatic began when all the players connect to the game.
  2. There is a message box in the center of the screen that show to the user messages about the game staus.
  - #### The possible messages is:  
-  a) Hit, Miss, Plant of mines.
-  b) Who the active player now.
-  c) Server communication error.
+  a) Hit, Miss, Plant of mines.</br>
+  b) Who the active player now.</br>
+  c) Server communication error.</br>
   d) Lose or Win message.
   
 #### Game screen example.
 ![Game screen](Screenshots/6.png)
  
+ ### Board marks:
+  1. empty square : ![empty square](Screenshots/7.png)
+  2. ship square : ![ship square](Screenshots/8.png)
+  3. miss square : ![miss square](Screenshots/9.png)
+  4. hit square : ![hit square](Screenshots/10.png)
+  5. mine hit square : ![mine hit square](Screenshots/11.png)
+  6. mine square : ![mine square](Screenshots/12.png)
+  
  ### Summary screen:
  This screen display when the game is finish.
   
 #### Summary screen example.
-![Summary screen](Screenshots/7.png)
-![Summary screen](Screenshots/8.png)
+![Summary screen](Screenshots/13.png)
+![Summary screen](Screenshots/14.png)
 
 **can run the project with the Ex3_war.war file using Tomcat.**
