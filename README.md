@@ -1,6 +1,6 @@
 # Battleship-Game
 A Web-Based-Multiplayer Battleship game in HTML/JavaScript, with Client-Server coordination.</br>
-Server side code was written in Java using Tomcat server.
+Server side code was written in Java using Tomcat server.</br>
  **Notice that can run the project just with Ex3_war file using Tomcat.**
  
 ## Project demonstration
