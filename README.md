@@ -51,4 +51,4 @@ Server side code was written in Java using Tomcat server.
 ![Summary screen](Screenshots/13.png)
 ![Summary screen](Screenshots/14.png)
 
-**can run the project with the Ex3_war.war file using Tomcat.**
+> **can run the project with the Ex3_war.war file using Tomcat.**
