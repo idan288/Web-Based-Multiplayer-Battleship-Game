@@ -45,10 +45,10 @@ Server side code was written in Java using Tomcat server.
   6. mine square : ![mine square](Screenshots/12.png)
   
  ### Summary screen:
- This screen display when the game is finish.
+ This screen appears when the game is finish.
   
 #### Summary screen example.
 ![Summary screen](Screenshots/13.png)
 ![Summary screen](Screenshots/14.png)
 
- **can run the project with the Ex3_war.war file using Tomcat.**
+ #### can run the project just with Ex3_war file using Tomcat.
