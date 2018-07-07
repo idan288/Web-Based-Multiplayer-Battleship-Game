@@ -34,7 +34,7 @@ Server side code was written in Java using Tomcat server.
   d) Lose or Win message.
   
 #### Game screen example.
-![Game screen](Screenshots/6.png)
+![Game screen](Screenshots/6.jpg)
  
  ### Board marks:
   1. empty square : ![empty square](Screenshots/7.png)
