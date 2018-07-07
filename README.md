@@ -6,4 +6,4 @@ Server side code was written in Java using Tomcat server.
 
 ## Project demonstration
 - ###  Login screen :
-!["Login screen"](Screenshots/)
+![Login screen](Screenshots/)
