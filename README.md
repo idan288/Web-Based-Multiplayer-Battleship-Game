@@ -14,12 +14,13 @@ Server side code was written in Java using Tomcat server.</br>
 ![Login screen-err2](Screenshots/3.png)
 
  ###  Rooms screen:
-  1. In this screen display all the online users, when the line of the user himself marked in green.
+  1. In this screen are displayed all the online users, when the line of the user himself marked in green.
   2. Can be see all the avilabel rooms.</br> 
-  In case the room is marked in light green it's mean that this room is full, and the user can't login.
+  In case the room is marked in light green it's mean that this room is full, and the user can't join.
   3. Player can upload new game by click on **Create room** button. </br>
   In case the upload game does not meet the rules, a orresponding error message is displayed that explain the problem.
-  4. In order to enter to room, need to choose one room from the rooms table, the line will marked in grey and then click on **Enter room** button, if the room is not full the user will move to the game page.
+  4. In order to join a room, need to choose one room from the rooms table, the line will marked in grey and then click on</br>
+  **Enter room** button, if the room is not full the user will move to the game page.
 
 #### Room screen example.
 ![Rooms screen](Screenshots/4.png)
