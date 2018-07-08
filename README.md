@@ -29,11 +29,11 @@ Server side code was written in Java using Tomcat server.</br>
 ### Game screen:
  1. The game automatic began when all the players connect to the game.
  2. There is a message box in the center of the screen that show to the user messages about the game staus.
- - #### The possible messages is:  
-  a) Hit, Miss, Plant of mines.</br>
-  b) Who the active player now.</br>
-  c) Server communication error.</br>
-  d) Lose or Win message.
+- #### The possible messages is:  
+   a) Hit, Miss, Plant of mines.</br>
+   b) Who the active player now.</br>
+   c) Server communication error.</br>
+   d) Lose or Win message.
   
 #### Game screen example.
 ![Game screen](Screenshots/6.jpg)
